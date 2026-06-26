@@ -1,6 +1,6 @@
-# Repository Guardrails & waill-e Guidelines
+# Repository Guardrails & WAILL-E Guidelines
 
-This project uses the **waill-e** framework for agentic development. Follow these rules strictly.
+This project uses the **WAILL-E** framework for agentic development. Follow these rules strictly.
 
 ## 1. Process & Slicing
 
@@ -46,19 +46,27 @@ This project uses the **waill-e** framework for agentic development. Follow thes
 ## 4. Interactive Engagement
 
 - For any design decisions, ambiguities, or choices, prioritize using interactive questions (`ask_question` or multiple-choice formats) to make the session dynamic and fast.
+- **Manual Verification**: After implementation and docs are committed, provide the user with clear, step-by-step functional instructions to manually test and verify the feature or fix.
 
 ## 5. Security & Secret Management
 
 - Never commit credentials, local system paths, API keys, or databases to git.
 - Keep `.waill-e/` untracked or tracked based on project preference (default is untracked).
 
-## 6. Commit Strategy
+## 6.  Git & Commit Guidelines
 
-- Commit after each TDD phase to track development steps:
-  - **Red**: Commit failing tests (prefix `test` / `tests`).
-  - **Green**: Commit implementation (prefix `feat`).
-  - **Refactor**: Commit cleanups (prefix `refactor` / `fix`).
-  - **Document**: Commit documentation (prefix `docs`).
+- **Convention**: Follow [Conventional Commits](https://www.conventionalcommits.org/).
+- **Format**: `<type>(<scope>): <description>`
+  - `feat`: A new feature (e.g., `feat(ingest): add directory scanner`)
+  - `fix`: A bug fix (e.g., `fix(parser): handle empty artist tag`)
+  - `docs`: Documentation changes (e.g., `docs(adr): update schema`)
+  - `test`: Adding or correcting tests (e.g., `test(db): add connection test`)
+  - `refactor`: Code restructuring without functional changes (e.g., `refactor(db): use typed statement`)
+- **Execution**: Commit changes in the following sequence for each slice:
+  1. `test(...)`: Add failing tests (Red)
+  2. `feat(...)` / `fix(...)`: Implement code to pass tests (Green)
+  3. `refactor(...)`: Clean up and structure the code (Refactor)
+  4. `docs(...)`: Document changes (Docs)
 
 ## 7. Development Guardrails
 
@@ -69,3 +77,12 @@ This project uses the **waill-e** framework for agentic development. Follow thes
 ### Surgical Changes
 - **Scope limit**: Touch only what you must. Do not refactor or reformat unrelated adjacent code.
 - **Clean orphans**: Remove unused imports, variables, or functions created by your changes. Leave pre-existing dead code unless asked.
+
+## 8. Standard Agentic Skills
+
+AI agents must load and execute standard repository skills located in `.agents/skills/` under the following conditions:
+
+- **grill-me** skill ([SKILL.md](.agents/skills/grill-me/SKILL.md)): Use this skill when starting new features, defining architecture, or clarifying design approaches with the user.
+- **tdd** skill ([SKILL.md](.agents/skills/tdd/SKILL.md)): Use this skill for any implementation or refactoring task. Do not write untested logic. Ensure the Red-Green-Refactor loop is followed vertically.
+- **caveman** skill ([SKILL.md](.agents/skills/caveman/SKILL.md)): Always active by default. Use this skill for all responses to minimize token usage, keeping communications extremely terse and direct.
+
