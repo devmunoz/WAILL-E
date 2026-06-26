@@ -1,4 +1,27 @@
-# waill-e
+# WAILL-E
+
+```text
+             .--------.       .--------.
+            /  .----.  \     /  .----.  \
+           |  /  (o)   |     |   (o)  \  |
+           |  \        |     |        /  |
+            \  `------' \___/ `------'  /
+             `--------'-'   `-'---------'
+                         ||
+                      ___||___
+                  _.-'--------'-._
+                 /|  ________  |  \
+          ((    / | |WAILL-E | |  |    ))
+          ))   |  | |________| |  |   ((
+         ((  _ |  |  _      _  |  | _  ))
+          \_/ \|  | (_)    (_) |  |/ \_/
+              |  |            |  /
+               \  \__________/  /
+                `--------------'
+                  /==========\
+                 /  O  O  O   \
+                /______________\
+```
 
 A minimal, robust framework for fast, tracked, and low-overhead agentic development. Optimized for developers with limited time who need to pick up where they left off without losing context.
 
@@ -12,7 +35,7 @@ A minimal, robust framework for fast, tracked, and low-overhead agentic developm
 
 ## Getting Started
 
-To use `waill-e` in a project:
+To use `WAILL-E` in a project:
 
 1. Copy the framework rules and `.agents/` folder into your project root:
    ```bash
