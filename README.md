@@ -37,6 +37,16 @@ A minimal, robust framework for fast, tracked, and low-overhead agentic developm
 
 To use `WAILL-E` in a project:
 
+### Option A: Run the installer script
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/devmunoz/WAILL-E/main/install.sh | bash
+# optional target path:
+curl -fsSL https://raw.githubusercontent.com/devmunoz/WAILL-E/main/install.sh | bash -s -- /path/to/your/project
+```
+
+### Option B: Manual setup
+
 1. Copy the framework rules and `.agents/` folder into your project root:
    ```bash
    # 0 clone this repo:
@@ -54,6 +64,20 @@ To use `WAILL-E` in a project:
    ```
 
 2. **Start iterating**: When the agent is first run, it will automatically create the `.waill-e` folder and initialize `.waill-e/ACTIVE_SLICE.md`.
+
+## Release packaging (maintainers)
+
+The installer downloads this fixed release asset from the latest GitHub release:
+
+- `waill-e-package.tar.gz`
+
+Build it with:
+
+```bash
+./scripts/build-release-package.sh
+```
+
+This repository also includes a GitHub Action (`.github/workflows/release-package.yml`) that builds and uploads `dist/waill-e-package.tar.gz` automatically when a release is published.
 
 ## Acknowledgements
 

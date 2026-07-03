@@ -1,0 +1,24 @@
+name: Build and attach release package
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  package-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build release package
+        run: ./scripts/build-release-package.sh
+
+      - name: Upload package to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/waill-e-package.tar.gz
+          overwrite_files: true
