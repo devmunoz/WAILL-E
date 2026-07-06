@@ -1,8 +1,9 @@
 name: Build and attach release package
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - 'v*'
 
 permissions:
   contents: write
@@ -20,6 +21,6 @@ jobs:
       - name: Upload package to release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.event.release.tag_name || github.ref_name }}
+          tag_name: ${{ github.ref_name }}
           files: dist/waill-e-package.tar.gz
           overwrite_files: true
