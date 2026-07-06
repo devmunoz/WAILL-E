@@ -77,7 +77,7 @@ Build it with:
 ./scripts/build-release-package.sh
 ```
 
-This repository also includes a GitHub Action (`.github/workflows/release-package.yml`) that builds and uploads `dist/waill-e-package.tar.gz` automatically when a release is published.
+This repository also includes a GitHub Action (`.github/workflows/release-package.yml`) that builds and uploads `dist/waill-e-package.tar.gz` automatically when a new tag `v*` (e.g. `vX.Y.Z`) is pushed.
 
 ## Updating Skills (maintainers)
 
