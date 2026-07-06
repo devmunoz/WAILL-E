@@ -79,6 +79,20 @@ Build it with:
 
 This repository also includes a GitHub Action (`.github/workflows/release-package.yml`) that builds and uploads `dist/waill-e-package.tar.gz` automatically when a release is published.
 
+## Updating Skills (maintainers)
+
+To update the skills (`caveman`, `codebase-design`, `grill-me`, `grilling`, `tdd`) to their latest versions from upstream sources, run:
+
+```bash
+./scripts/update-skills.sh
+```
+
+You can also specify particular skills to update:
+
+```bash
+./scripts/update-skills.sh tdd grill-me
+```
+
 ## Acknowledgements
 
-Skills are sourced from [mattpocock/skills](https://github.com/mattpocock/skills), that was an inspiration to built this framework.
+Skills are sourced from [mattpocock/skills](https://github.com/mattpocock/skills) and [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman), which inspired this framework.

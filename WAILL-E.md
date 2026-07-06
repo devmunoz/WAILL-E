@@ -55,6 +55,7 @@ This project uses the **WAILL-E** framework for agentic development. Follow thes
 
 ## 6.  Git & Commit Guidelines
 
+- **User Review**: Always ask for user review/validation before committing any changes.
 - **Convention**: Follow [Conventional Commits](https://www.conventionalcommits.org/).
 - **Format**: `<type>(<scope>): <description>`
   - `feat`: A new feature (e.g., `feat(ingest): add directory scanner`)
