@@ -41,7 +41,11 @@ To use `WAILL-E` in a project:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/devmunoz/WAILL-E/main/install.sh | bash
-# optional target path:
+``` 
+
+Specify target path if you want:
+
+```bash
 curl -fsSL https://raw.githubusercontent.com/devmunoz/WAILL-E/main/install.sh | bash -s -- /path/to/your/project
 ```
 
