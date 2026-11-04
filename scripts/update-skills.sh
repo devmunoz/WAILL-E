@@ -172,8 +172,14 @@ for skill in "${SKILLS_TO_UPDATE[@]}"; do
   
   echo "Replacing skill '$skill' at '$dest_path'..."
   rm -rf "$dest_path"
-  mkdir -p "$(dirname "$dest_path")"
-  cp -R "$src_path" "$dest_path"
+  mkdir -p "$dest_path"
+  cp -R "$src_path"/. "$dest_path"/
+
+  # Omit proprietary, non-skill, README, and hidden metadata files
+  find "$dest_path" -mindepth 1 -name ".*" -exec rm -rf {} + 2>/dev/null || true
+  find "$dest_path" -iname "*claude*" -exec rm -rf {} + 2>/dev/null || true
+  find "$dest_path" -iname "readme*" -exec rm -rf {} + 2>/dev/null || true
+  find "$dest_path" \( -name "copilot-instructions.md" -o -name "package-lock.json" -o -name "yarn.lock" -o -name "pnpm-lock.yaml" \) -exec rm -rf {} + 2>/dev/null || true
 done
 
 echo "Skills update complete!"
